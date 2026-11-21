@@ -1,0 +1,19 @@
+{
+  "name": "simao-site",
+  "private": true,
+  "version": "1.0.0",
+  "type": "module",
+  "description": "Personal site of Simão Coelho",
+  "scripts": {
+    "build": "node build.mjs",
+    "test": "node build.mjs && node scripts/check.mjs",
+    "verify": "node scripts/verify.mjs",
+    "serve": "node scripts/serve.mjs"
+  },
+  "engines": {
+    "node": ">=20"
+  },
+  "devDependencies": {
+    "playwright": "1.63.0"
+  }
+}

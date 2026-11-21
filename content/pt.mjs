@@ -1,0 +1,91 @@
+// Texto em português (segunda língua, servido em "/pt/").
+// Tem de ter exatamente a mesma forma que en.mjs: o `npm test` verifica.
+import { profile } from "./profile.mjs";
+
+export const pt = {
+  lang: "pt",
+  htmlLang: "pt-PT",
+  ogLocale: "pt_PT",
+  path: "/pt/",
+  other: { label: "EN", href: "/?lang=en", hrefLang: "en", aria: "View the site in English" },
+  meta: {
+    title: `${profile.name} — Estudante e criador do NANO`,
+    description: `${profile.name}, ${profile.age} anos, estudante do ${profile.city} que cria software. Criador do NANO, um assistente pessoal de IA para Windows e Android, e do Vuxio.`,
+  },
+  skip: "Saltar para o conteúdo",
+  loader: {
+    words: ["Olá", "Hello", "Hola", "Bonjour", "Ciao", "Hallo", "Bem-vindo"],
+    label: "A carregar",
+  },
+  nav: [
+    { label: "Projetos", href: "#work" },
+    { label: "Sobre", href: "#about" },
+    { label: "Contacto", href: "#contact" },
+  ],
+  hero: {
+    kicker: "Portefólio / 2026",
+    role: ["Estudante", "e developer"],
+    lines: ["Crio software que", "pensa, ouve e", "resolve as coisas."],
+    location: `${profile.city}, Portugal`,
+    status: "Ideias bem-vindas",
+    scroll: "Desliza",
+    photoAlt: `Fotografia a preto e branco de ${profile.name} num cadeirão branco`,
+  },
+  about: {
+    label: "Sobre",
+    text: `Chamo-me ${profile.firstName}, tenho ${profile.age} anos, sou do ${profile.city} e prefiro construir as coisas a só usá-las. Quase todo o meu tempo vai para o NANO, um assistente pessoal de IA que estou a transformar no meu próprio JARVIS: que vê, se lembra e ajuda em tudo, do PC ao telemóvel.`,
+    facts: [
+      { k: "Onde", v: `${profile.city}, Portugal` },
+      { k: "Idade", v: `${profile.age} anos` },
+      { k: "Foco", v: "Assistentes de IA, apps, web" },
+      { k: "Projeto principal", v: "NANO" },
+      { k: "Línguas", v: "Português, inglês" },
+    ],
+    stackLabel: "Ferramentas",
+    deskLabel: "Na minha secretária",
+    desk: ["Ryzen 7 5700X", "GTX 1660 Ti", "16 GB de RAM", "Demasiados separadores"],
+  },
+  work: {
+    label: "Projetos",
+    count: "02 projetos",
+    featured: "Projeto principal",
+    live: "Ver site",
+    code: "Código",
+    soon: "Em breve",
+    nano: {
+      title: "NANO",
+      year: "2025 — agora",
+      kind: "Assistente pessoal de IA",
+      text: "Um assistente de IA grátis e de código aberto para Windows, com app para Android. Fala, lembra-se do que importa, controla o PC, funciona com modelos locais ou na nuvem e chega ao telemóvel mesmo fora de casa.",
+      bullets: ["Voz e chat", "Memória com um cérebro 3D", "Controlo do Windows com permissão", "App Android com ligação cifrada"],
+      tags: ["Python", "Electron", "React", "Android"],
+      imgAlt: "Ecrã inicial do NANO",
+      img3Alt: "NANO num telemóvel Android",
+    },
+    vuxio: {
+      title: "Vuxio",
+      year: "2026",
+      kind: "App de chat com IA, feita de raiz",
+      text: "Uma app de chat com IA escrita à mão, sem modelos prontos: respostas que aparecem enquanto são escritas, um modo Código para programar, pesquisa na web com fontes, memória e voz. O irmão, VUXIOCODE, é um assistente de programação para o terminal que usa primeiro modelos locais.",
+      bullets: ["Respostas em tempo real", "Modo Código e pesquisa web", "Memória com /remember", "Voz para falar e ouvir"],
+      tags: ["React", "TypeScript", "Firebase", "Node"],
+      cli: "VUXIOCODE",
+      imgAlt: "Ecrã de chat do Vuxio em modo escuro",
+      img2Alt: "Página de entrada do Vuxio",
+    },
+  },
+  marquee: ["Criar", "Aprender", "Lançar", "Repetir"],
+  contact: {
+    label: "Contacto",
+    title: ["Vamos criar", "algo juntos."],
+    text: "Tens uma ideia, uma pergunta ou só queres dizer olá? Encontras-me aqui.",
+    copy: "Copiar",
+    copied: "Copiado",
+  },
+  footer: {
+    local: "Hora local",
+    made: "Desenhado e feito por",
+    top: "Voltar ao topo",
+  },
+  noscript: "Este site funciona melhor com o JavaScript ligado.",
+};
