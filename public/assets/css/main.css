@@ -170,14 +170,11 @@ main, .footer, .header { position: relative; z-index: 2; }
 .lang:hover { background: #fff; color: #000; }
 .clock { font-variant-numeric: tabular-nums; }
 
-/* Text roll on hover */
-.roll { position: relative; display: inline-block; overflow: hidden; vertical-align: bottom; }
-.roll::after {
-  content: attr(data-text); position: absolute; left: 0; top: 100%;
-}
-.roll, .roll::after { transition: transform 0.55s var(--ease); }
-a:hover .roll, a:focus-visible .roll { transform: translateY(-100%); }
-a:hover .roll::after { transform: translateY(0); }
+/* Text roll on hover: the text slides up and a copy slides in from below */
+.roll { display: inline-block; overflow: hidden; vertical-align: bottom; line-height: 1.2; padding: 0 0.06em; margin: 0 -0.06em; }
+.roll > span { display: block; position: relative; transition: transform 0.55s var(--ease); }
+.roll > span::after { content: attr(data-text); position: absolute; left: 0; top: 100%; }
+a:hover .roll > span, a:focus-visible .roll > span { transform: translateY(-100%); }
 
 /* ───────── Sections ───────── */
 .section { padding: clamp(96px, 14vw, 200px) var(--gutter); }
@@ -211,8 +208,8 @@ a:hover .roll::after { transform: translateY(0); }
   white-space: nowrap;
 }
 .hero__word { display: block; }
-.hero__word + .hero__word { text-align: right; margin-right: -0.02em; }
-.l { display: inline-block; overflow: hidden; vertical-align: top; padding-bottom: 0.04em; }
+.hero__word + .hero__word { text-align: right; margin-right: 0.03em; }
+.l { display: inline-block; overflow: hidden; vertical-align: top; padding: 0.14em 0.1em 0.08em; margin: -0.14em -0.1em -0.08em; }
 .l > span { display: inline-block; will-change: transform; }
 
 .hero__stage { position: relative; align-self: center; }
@@ -223,7 +220,7 @@ a:hover .roll::after { transform: translateY(0); }
 .hero__role { font-size: clamp(22px, 2.4vw, 36px); line-height: 1.05; letter-spacing: -0.03em; font-weight: 500; }
 .hero__role .serif { font-size: 1.15em; }
 .hero__lines { font-size: clamp(18px, 1.6vw, 24px); line-height: 1.25; color: var(--muted); letter-spacing: -0.01em; }
-.line { display: block; overflow: hidden; }
+.line { display: block; overflow: hidden; padding: 0.12em 0.08em 0.1em; margin: -0.12em -0.08em -0.1em; }
 .line > span { display: inline-block; }
 .hero__photo { position: absolute; right: 0; top: 0.4vw; width: 31vw; }
 .hero__photo-inner { overflow: hidden; aspect-ratio: 2.15 / 1; background: var(--bg-2); clip-path: inset(0 0 0 0); }
@@ -293,7 +290,7 @@ a:hover .roll::after { transform: translateY(0); }
   display: grid; grid-template-columns: 1.6fr 0.4624fr; gap: clamp(10px, 1.4vw, 20px);
 }
 .shot { overflow: hidden; border-radius: clamp(8px, 1vw, 14px); background: var(--bg-2); border: 1px solid var(--line); }
-.shot img { width: 100%; height: 100%; object-fit: cover; transform: scale(1.12); will-change: transform; }
+.shot img { width: 100%; height: 100%; object-fit: cover; will-change: transform; }
 .shot--main { aspect-ratio: 16 / 10; }
 .shot--phone { aspect-ratio: 1082 / 2340; border-radius: clamp(12px, 1.6vw, 24px); }
 .case__body {

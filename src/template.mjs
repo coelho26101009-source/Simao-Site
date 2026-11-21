@@ -99,7 +99,7 @@ if(sessionStorage.getItem("simao-seen")){d.classList.add("seen");}
 <header class="header">
   <a class="brand magnetic" href="${c.path}#top" aria-label="${esc(profile.name)}">${esc(profile.name)}<sup>©</sup></a>
   <nav class="nav" aria-label="${c.lang === "pt" ? "Principal" : "Main"}">
-    ${c.nav.map((n, i) => `<a class="nav__link" href="${n.href}"><span class="mono">(${pad(i + 1)})</span> <span class="roll" data-text="${esc(n.label)}">${esc(n.label)}</span></a>`).join("\n    ")}
+    ${c.nav.map((n, i) => `<a class="nav__link" href="${n.href}"><span class="mono">(${pad(i + 1)})</span> <span class="roll"><span data-text="${esc(n.label)}">${esc(n.label)}</span></span></a>`).join("\n    ")}
   </nav>
   <div class="header__right mono">
     <span class="clock" data-tz="${profile.timeZone}">--:--</span>
@@ -213,7 +213,7 @@ if(sessionStorage.getItem("simao-seen")){d.classList.add("seen");}
   <p class="contact__text reveal">${esc(c.contact.text)}</p>
   ${profile.email ? `<div class="email reveal"><a class="email__link" href="mailto:${esc(profile.email)}">${esc(profile.email)}</a><button class="email__copy mono magnetic" type="button" data-copy="${esc(profile.email)}" data-done="${esc(c.contact.copied)}">${esc(c.contact.copy)}</button></div>` : ""}
   <ul class="socials">
-    ${socials().map((s, i) => `<li class="reveal"><a href="${esc(s.url)}" target="_blank" rel="me noopener"><span class="mono">${pad(i + 1)}</span><span class="socials__name roll" data-text="${esc(s.label)}">${esc(s.label)}</span>${arrow}</a></li>`).join("\n    ")}
+    ${socials().map((s, i) => `<li class="reveal"><a href="${esc(s.url)}" target="_blank" rel="me noopener"><span class="mono">${pad(i + 1)}</span><span class="socials__name roll"><span data-text="${esc(s.label)}">${esc(s.label)}</span></span>${arrow}</a></li>`).join("\n    ")}
   </ul>
 </section>
 </main>

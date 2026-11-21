@@ -211,16 +211,14 @@
     });
   }
 
-  // Screenshots: clip reveal + inner parallax.
+  // Screenshots: the frame opens and the image settles to its full size,
+  // so once it is in view the whole app is visible (no zoom, no crop).
   for (const shot of $$(".shot")) {
-    gsap.fromTo(shot, { clipPath: "inset(12% 8% 12% 8% round 14px)" }, {
-      clipPath: "inset(0% 0% 0% 0% round 14px)", ease: "none",
-      scrollTrigger: { trigger: shot, start: "top 95%", end: "top 45%", scrub: true },
+    const st = { trigger: shot, start: "top 95%", end: "top 55%", scrub: true };
+    gsap.fromTo(shot, { clipPath: "inset(10% 6% 10% 6% round 14px)" }, {
+      clipPath: "inset(0% 0% 0% 0% round 14px)", ease: "none", scrollTrigger: st,
     });
-    gsap.fromTo($("img", shot), { yPercent: -6 }, {
-      yPercent: 6, ease: "none",
-      scrollTrigger: { trigger: shot, start: "top bottom", end: "bottom top", scrub: true },
-    });
+    gsap.fromTo($("img", shot), { scale: 1.08 }, { scale: 1, ease: "none", scrollTrigger: { ...st } });
   }
 
   // Marquee: always moving, faster and reversing with scroll velocity.
