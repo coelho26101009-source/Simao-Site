@@ -263,9 +263,6 @@ a:hover .roll::after { transform: translateY(0); }
   transition: background 0.3s, color 0.3s, border-color 0.3s;
 }
 .chips li:hover { background: var(--fg); color: var(--bg); border-color: var(--fg); }
-.desk { margin-top: 14px; display: grid; gap: 8px; color: var(--fg); }
-.desk li { display: flex; gap: 14px; }
-.desk li span { color: var(--quiet); }
 
 /* ───────── Marquee ───────── */
 .marquee { overflow: hidden; border-block: 1px solid var(--line); padding: clamp(12px, 2vw, 24px) 0; }

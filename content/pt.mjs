@@ -42,8 +42,6 @@ export const pt = {
       { k: "Línguas", v: "Português, inglês" },
     ],
     stackLabel: "Ferramentas",
-    deskLabel: "Na minha secretária",
-    desk: ["Ryzen 7 5700X", "GTX 1660 Ti", "16 GB de RAM", "Demasiados separadores"],
   },
   work: {
     label: "Projetos",

@@ -146,10 +146,6 @@ if(sessionStorage.getItem("simao-seen")){d.classList.add("seen");}
         <p class="label mono">${esc(c.about.stackLabel)}</p>
         <ul class="chips">${profile.stack.map((s) => `<li>${esc(s)}</li>`).join("")}</ul>
       </div>
-      <div class="reveal">
-        <p class="label mono">${esc(c.about.deskLabel)}</p>
-        <ul class="desk mono">${c.about.desk.map((d, i) => `<li><span>${pad(i + 1)}</span>${esc(d)}</li>`).join("")}</ul>
-      </div>
     </div>
   </div>
 </section>

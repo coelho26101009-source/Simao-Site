@@ -11,7 +11,7 @@ const ok = (msg) => console.log("✓ " + msg);
 const shape = (a, b, path = "") => {
   if (Array.isArray(a)) {
     if (!Array.isArray(b)) return fail(`${path} is a list in en but not in pt`);
-    if (["loader.words", "marquee", "about.desk", "work.nano.tags", "work.vuxio.tags", "work.vuxio.bullets", "work.nano.bullets"].includes(path.slice(1))) return;
+    if (["loader.words", "marquee", "work.nano.tags", "work.vuxio.tags", "work.vuxio.bullets", "work.nano.bullets"].includes(path.slice(1))) return;
     if (a.length !== b.length) fail(`${path} has ${a.length} items in en, ${b.length} in pt`);
     a.forEach((x, i) => shape(x, b[i], `${path}[${i}]`));
   } else if (a && typeof a === "object") {

@@ -42,8 +42,6 @@ export const en = {
       { k: "Languages", v: "Portuguese, English" },
     ],
     stackLabel: "Tools I use",
-    deskLabel: "On my desk",
-    desk: ["Ryzen 7 5700X", "GTX 1660 Ti", "16 GB RAM", "Too many tabs"],
   },
   work: {
     label: "Selected work",
