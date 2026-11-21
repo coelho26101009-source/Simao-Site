@@ -59,6 +59,7 @@ export function render(c, { other }) {
 <meta property="og:image" content="${profile.siteUrl}/assets/img/og.jpg">
 <meta property="og:locale" content="${c.ogLocale}">
 <meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="/favicon.ico" sizes="any">
 <link rel="icon" href="/favicon.svg" type="image/svg+xml">
 <link rel="preload" href="/assets/fonts/inter-tight-latin-wght-normal.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="preload" href="/assets/fonts/jetbrains-mono-latin-400-normal.woff2" as="font" type="font/woff2" crossorigin>
@@ -168,7 +169,7 @@ if(sessionStorage.getItem("simao-seen")){d.classList.add("seen");}
       <span class="case__badge mono"><i></i>${esc(c.work.featured)}</span>
       <span class="case__year mono">./${esc(nano.year)}</span>
     </div>
-    <h2 class="case__title" id="nano-title"><img class="case__symbol" src="/assets/img/nano-symbol.webp" alt="" width="360" height="360">${letters(nano.title)}</h2>
+    <h2 class="case__title" id="nano-title" aria-label="${esc(nano.title)}"><img class="case__symbol" src="/assets/img/nano-symbol.webp" alt="" width="360" height="360"><span aria-hidden="true">${letters(nano.title)}</span></h2>
     <p class="case__kind"><span class="serif">${esc(nano.kind)}</span></p>
     <div class="case__media" data-cursor="NANO">
       <figure class="shot shot--main"><img src="/assets/img/nano-home.webp" alt="${esc(nano.imgAlt)}" loading="lazy" width="1920" height="1200"></figure>
@@ -189,7 +190,7 @@ if(sessionStorage.getItem("simao-seen")){d.classList.add("seen");}
       <span class="case__index mono">02</span>
       <span class="case__year mono">./${esc(vuxio.year)}</span>
     </div>
-    <h2 class="case__title case__title--sm" id="vuxio-title"><img class="case__symbol case__symbol--plain" src="/assets/img/vuxio-symbol.webp" alt="" width="256" height="256">${letters(vuxio.title)}</h2>
+    <h2 class="case__title case__title--sm" id="vuxio-title" aria-label="${esc(vuxio.title)}"><img class="case__symbol case__symbol--plain" src="/assets/img/vuxio-symbol.webp" alt="" width="256" height="256"><span aria-hidden="true">${letters(vuxio.title)}</span></h2>
     <p class="case__kind"><span class="serif">${esc(vuxio.kind)}</span></p>
     <div class="case__media case__media--duo" data-cursor="Vuxio">
       <figure class="shot"><img src="/assets/img/vuxio-chat.webp" alt="${esc(vuxio.imgAlt)}" loading="lazy" width="1920" height="1200"></figure>
