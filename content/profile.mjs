@@ -11,19 +11,19 @@ export const profile = {
   timeZone: "Europe/Lisbon",
   email: "",
   socials: [
-    { label: "GitHub", url: "https://github.com/coelho26101009-source" },
+    { label: "GitHub", url: "https://github.com/coelho97sc" },
     { label: "X", url: "https://x.com/SimoCoelho27618" },
   ],
   stack: ["Python", "TypeScript", "React", "Electron", "Android", "Firebase", "Cloudflare", "AI / LLMs"],
   projects: {
     nano: {
       site: "https://nanoassistantsite.vercel.app",
-      code: "https://github.com/coelho26101009-source/Nano_Assistant",
+      code: "https://github.com/coelho97sc/Nano_Assistant",
     },
     vuxio: {
       site: "https://vuxio-ai.vercel.app",
-      code: "https://github.com/coelho26101009-source/VUXIO-AI",
-      cli: "https://github.com/coelho26101009-source/VUXIOCODE",
+      code: "https://github.com/coelho97sc/VUXIO-AI",
+      cli: "https://github.com/coelho97sc/VUXIOCODE",
     },
   },
 };
