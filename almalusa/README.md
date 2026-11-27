@@ -5,3 +5,7 @@ Site estático (HTML, CSS e JS), sem build. Cores, logo e fotos vêm da comunica
 - `index.html`: todo o texto, contactos e links (marcação, WhatsApp, e-mail).
 - `assets/js/app.js`: horário, estado "aberto agora", menu.
 - Falta: morada e mapa, Instagram da clínica e fotos do espaço.
+
+## Cache
+
+O CSS e o JS são pedidos com `?v=<hash>` no `index.html`. Depois de mudar um deles, volta a calcular o hash (sha1, 10 caracteres) e atualiza o `index.html`, para os telemóveis não ficarem com a versão antiga.
