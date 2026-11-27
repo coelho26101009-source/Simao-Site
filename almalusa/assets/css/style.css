@@ -232,9 +232,11 @@ button { font: inherit; color: inherit; background: none; border: 0; cursor: poi
   .row { grid-template-columns: 40px minmax(0, 1fr); }
   .row p, .row__who { grid-column: 2; text-align: left; }
   .team { grid-template-columns: repeat(2, 1fr); }
-  .gallery { grid-template-columns: 1fr; grid-template-rows: none; }
+  /* telemóvel: cada foto usa a sua altura natural, por isso nunca fica achatada */
+  .gallery { grid-template-columns: 1fr; grid-template-rows: none; align-items: start; }
   .g--big { grid-row: auto; }
-  .g { aspect-ratio: 3 / 2; }
+  .g { aspect-ratio: auto; }
+  .g img { height: auto; }
   .loc { grid-template-columns: 1fr; }
   .contact__row { grid-template-columns: 1fr auto; }
   .contact__row .label { grid-column: 1 / -1; }
