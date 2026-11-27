@@ -6,6 +6,9 @@ const CONFIG = {
   GOOGLE_SCRIPT_URL:
     "https://script.google.com/macros/s/AKfycbyutObsN-puvz8akVdMv_q0POUrtqVEN_M4IeChGYG5ldK_znKfckPMQ6H0FAKL36nS/exec",
   WHATSAPP_NUMBER: "351935491538",
+  // Modo demonstração: não envia pedidos nem lê preços do Google Sheets.
+  // Pôr a false quando o site for entregue ao cliente.
+  DEMO: true,
 };
 
 const DIAGNOSIS = 15;
@@ -133,6 +136,7 @@ function initPrices() {
 }
 
 async function syncPrices() {
+  if (CONFIG.DEMO) return;
   try {
     const res = await fetch(`${CONFIG.GOOGLE_SCRIPT_URL}?action=getPrices`);
     if (!res.ok) return;
@@ -357,12 +361,14 @@ async function submit(e) {
   btn.disabled = true;
   btn.innerHTML = "<span>A enviar…</span>";
   try {
-    await fetch(CONFIG.GOOGLE_SCRIPT_URL, {
-      method: "POST",
-      mode: "no-cors",
-      headers: { "Content-Type": "text/plain;charset=utf-8" },
-      body: JSON.stringify(payload),
-    });
+    if (!CONFIG.DEMO) {
+      await fetch(CONFIG.GOOGLE_SCRIPT_URL, {
+        method: "POST",
+        mode: "no-cors",
+        headers: { "Content-Type": "text/plain;charset=utf-8" },
+        body: JSON.stringify(payload),
+      });
+    }
   } catch (error) {
     console.warn("Não foi possível contactar o Google Sheets; segue a confirmação por WhatsApp.", error);
   } finally {
